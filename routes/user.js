@@ -24,8 +24,8 @@ router.post('/user', async (req, res) => {
 router.get('/getUsers', async (req, res) => {
     try {
         
-        let page = parseInt(req.query.page);          // converting string to number
-        let limit = parseInt(req.query.limit);
+        let page = parseInt(req.query.page) || 1;          // converting string to number
+        let limit = parseInt(req.query.limit) || 5;
 
         if(!req.query.page || req.query.page === 0) {
             page = 1;
